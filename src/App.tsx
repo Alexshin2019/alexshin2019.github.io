@@ -964,20 +964,16 @@ function App() {
                     </div>
                     <div className="p-4 bg-green-50 rounded-lg">
                       <div className="text-2xl font-bold text-green-600">
-                        {records.filter(r => r.emotions.some(e =>
-                          ['기쁨', '행복', '사랑', '평온', '감사', '흥미진진'].includes(e.name)
-                        )}.length}
+                        {records.filter(r => r.emotions.some(e => e.name === '행복')).length}
                       </div>
-                      <div className="text-sm text-gray-600">긍정적 감정</div>
+                      <div className="text-sm text-gray-600">행복한 순간</div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             )}
-          </TabsContent>
 
-          {/* 달력 탭 */}
-          <TabsContent value="calendar" className="space-y-6">
+            {/* 달력으로 감정 보기 */}
             <Card className="shadow-lg">
               <CardHeader>
                 <CardTitle className="text-xl">달력으로 감정 보기</CardTitle>
@@ -1259,17 +1255,15 @@ function App() {
                     </div>
                     <div className="p-4 bg-green-50 rounded-lg">
                       <div className="text-2xl font-bold text-green-600">
-                        {records.filter(r => r.emotions.some(e =>
-                          ['기쁨', '행복', '사랑', '평온', '감사', '흥미진진'].includes(e.name)
-                        )}.length}
+                        {records.filter(r => r.emotions.some(e => e.name === '행복')).length}
                       </div>
-                      <div className="text-sm text-gray-600">긍정적 감정</div>
+                      <div className="text-sm text-gray-600">행복한 순간</div>
                     </div>
                     <div className="p-4 bg-yellow-50 rounded-lg">
                       <div className="text-2xl font-bold text-yellow-600">
                         {Math.round(records.filter(r => r.emotions.some(e =>
                           ['기쁨', '행복', '사랑', '평온', '감사', '흥미진진'].includes(e.name)
-                        )}.length / records.length * 100)}%
+                        )).length / records.length * 100)}%
                       </div>
                       <div className="text-sm text-gray-600">긍정적 감정 비율</div>
                     </div>
